@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Movie Recommendation System</title>
+</head>
+<body>
+    <h1>Movie Recommendation System</h1>
+    <form method="POST" action="/recommend">
+        <label for="movie_name">Enter Movie Name:</label>
+        <input list="movie_list" id="movie_name" name="movie_name" required>
+        <datalist id="movie_list">
+            <option value="Toy Story">
+            <option value="Jumanji">
+            <option value="Grumpier Old Men">
+            <option value="Waiting to Exhale">
+            <option value="Father of the Bride Part II">
+            <option value="Heat">
+            <option value="Sabrina">
+            <option value="Tom and Huck">
+            <option value="Sudden Death">
+            <option value="GoldenEye">
+            <!-- Add more movie names here manually or render dynamically from Flask -->
+        </datalist>
+        <br><br>
+
+        <label for="user_id">Enter User ID:</label>
+        <input type="number" id="user_id" name="user_id" required><br><br>
+
+        <label for="top_n">Top N Recommendations:</label>
+        <input type="number" id="top_n" name="top_n" value="10" required><br><br>
+
+        <input type="submit" value="Get Recommendations">
+    </form>
+
+    {% if recommendations %}
+    <h2>Recommendations for Movie: {{ movie_name }} (User ID: {{ user_id }})</h2>
+    <ul>
+        {% for rec in recommendations %}
+            <li>{{ rec }}</li>
+        {% endfor %}
+    </ul>
+    {% endif %}
+</body>
+</html>
