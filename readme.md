@@ -49,14 +49,6 @@ project,take**movies.csv**and **ratings.csv**file.
 >
 > • **Pickle(.pkl)**:Serialized modelfilesused forefficientstorageand
 > retrievaloftherecommendation models.
->
-> **Features**
->
-> • Combinesmultiplerecommendationalgorithms • Flask-based backend API
->
-> • HTML frontend interface
->
-> • Modelserialized with picklefor easydeployment
 
 **Usage**
 
